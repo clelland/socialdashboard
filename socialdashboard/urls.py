@@ -6,8 +6,10 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'socialdashboard.views.home', name='home'),
-    # url(r'^socialdashboard/', include('socialdashboard.foo.urls')),
+    url(r'^$', 'socialdashboard.views.home', name='home'),
+    url(r'^user/(?P<identifier>[^/]*)/$', 'socialdashboard.views.user_detail', name='user_detail'),
+
+    url(r'^account/', include('socialuser.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
